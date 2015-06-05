@@ -8,16 +8,32 @@ categories: [Web Development]
 
 ## Responsive.
 
-Foundation is a front-end framework that follows a readable grid layout. I had to choose between Bootstrap and Foundation, I chose Foundation mainly because of reddit arguments supporting Foundation and its flexibility. It did not really vibe at first because most tutorials were using Bootstrap. After many projects sampling Foundation, it simply clicked. It was a just a CSS wrapper that used SCSS to be more abstract and clean.
+I try to use Foundation as much as possible. This grid system is very familiar and as a whole responsive.
 
-I navigated between source code and Chrome developer console to understand what the framework affected. It overrided many button styles I was always building inside the grid wrapper. Sometimes I built my layout quickly, sometimes I had to fight the framework to make a row 100% width rather than the framework's set width. Thankfully there is a community out there that already experienced 99% of your problems.
+## Overrides.
+Only problems is overriding attributes that are default in the framework.
+For example, the last child of an index would be floated right. But I would not know that until I found the conflict through the developer console.
+
+  It overrided many button styles I was always building inside the grid wrapper. Sometimes there would be no conflicts, sometimes I had to fight the framework to get my button styles in. Thankfully there is a community out there that already experienced the conflicts I had.
+
+## With Rails
+I re-ordered my overrides in application.css.scss
+
+```scss
+
+ *= require "framework_and_overrides"
+ *= require "book_checkouts"
+ *= require "books"
+ *= require "users"
+ *= require_self
+ */
+```
+This makes it so that foundation's overrides get handled first, then my custom styles will not be overriden.
 
 ## Finally
-Why Foundation over Bootstrap? To me, Foundation is much more cool and its interface does not rely on clear, comical bubble styles. I understood the grid system relatively quick and got what I needed.
+Foundation is neat to have around. It is a bloated framework, but it is neatly documented and easy to comment out features I don't need.
 
-# How Has it Affected Me?
 
-I use Foundation wherever I can. I used Bootstrap once and it didn't sit with me. The style felt too simple and easily recognized by others, its pattern really gets around. I start all my projects with a formal web design grid.
 
 
 

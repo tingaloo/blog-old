@@ -129,7 +129,6 @@
 
                 > .post-link{
                     text-decoration: underline;
-
                 }
 
                 > .post-quote {
@@ -158,4 +157,8 @@
             } // end box
         }
     }
+}
+
+.sitemap > ul, li {
+    list-style-type: none;
 }
